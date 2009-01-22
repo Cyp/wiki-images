@@ -8,17 +8,10 @@ FeynmanPropagatorWithMass20.jpg \
 FeynmanPropagatorWithMass200.jpg \
 PropagatorColours.jpg
 
-# PNGS = \
-#DoubleWellSoliton.png
 
-# GIFS = \
-#DoubleWellSolitonAntisoliton.gif
-
-all: jpgs #pngs gifs
+all: jpgs
 $(JPGS): FeynmanPropagatorWithMass2.ppm
 jpgs: $(JPGS)
-#pngs: $(PNGS)
-#gifs: $(GIFS)
 
 #-fopenmp
 field: field.cpp
@@ -27,16 +20,5 @@ field: field.cpp
 FeynmanPropagatorWithMass2.ppm: field
 	./field
 
-#soliton: soliton.cpp
-#	$(CXX) -O2 -s -o $@ $< -Wall -Wextra
-#soliton.ppm: soliton
-#	./soliton
-
 %.jpg: %.ppm
 	convert $< $@
-
-#DoubleWellSoliton.png: soliton.ppm
-#	convert $< $@
-
-#DoubleWellSolitonAntisoliton.gif: soliton.ppm
-#	convert disoliton*.ppm $@
