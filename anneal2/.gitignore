@@ -1,0 +1,4 @@
+/Makefile
+/anneal2
+/*.o
+/moc_*.cpp
